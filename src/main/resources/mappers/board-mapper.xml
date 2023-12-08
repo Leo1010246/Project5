@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+    <insert id="insertBoard">
+        insert into member (userid, username, password, email, blogurl, photo, detail)
+        values
+        (#{userid}, #{username}, #{password}, #{email}, #{blogurl}, #{photo}, #{detail})
+    </insert>
+    <update id="updateBoard">
+        update member
+        set userid=#{userid}, username=#{username}, password=#{password}, email=#{email}, blogurl=#{blogurl}, photo=#{photo}, detail=#{detail}
+        where sid=#{sid}
+    </update>
+    <delete id="deleteBoard">
+        delete from member where sid=#{sid}
+    </delete>
+    <select id="getBoard" resultType="board">
+        select * from member where sid=#{sid}
+    </select>
+    <select id="getBoardList" resultType="board">
+        select * from member order by sid desc
+    </select>
+</mapper>
