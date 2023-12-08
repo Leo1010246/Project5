@@ -41,5 +41,4 @@ public class MovieDAO {
         return list;
     }
 
-
 }
