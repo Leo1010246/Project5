@@ -11,7 +11,7 @@
     <update id="updateMovie">
         update Movie
         set poster=#{poster}, title=#{title}, reldate=#{reldate}, genre=#{genre}, director=#{director}, actors=#{actors}, story=#{story}, rating=#{rating}
-        where sid=#{sid}
+        where seq=#{seq}
     </update>
     <delete id="deleteMovie">
         delete from Movie where seq=#{seq}
