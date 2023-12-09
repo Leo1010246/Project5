@@ -37,7 +37,7 @@ public class MovieDAO {
     }
 
     public List<MovieVO> getMovieList() {
-        List<MovieVO> list = sqlSession.selectList("Board.getMovieList");
+        List<MovieVO> list = sqlSession.selectList("Movie.getMovieList");
         return list;
     }
 

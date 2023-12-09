@@ -34,13 +34,14 @@
 
 <form action="addok" method="post">
     <table id="edit">
-        <tr><td>ID:</td><td><input type="text" name="userId"/></td></tr>
-        <tr><td>Name:</td><td><input type="text" name="userName"/></td></tr>
-        <tr><td>Password:</td><td><input type="text" name="password"/></td></tr>
-        <tr><td>Email:</td><td><input type="text" name="email"/></td></tr>
-        <tr><td>BlogURL:</td><td><textarea cols="50" rows="3" name="blogUrl"></textarea></td></tr>
-        <tr><td>Photo:</td><td><input type="text" name="photo"/></td></tr>
-        <tr><td>Detail:</td><td><textarea cols="50" rows="5" name="detail"></textarea></td></tr>
+        <tr><td>Poster:</td><td><input type="text" name="poster"/></td></tr>
+        <tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
+        <tr><td>Reldate:</td><td><input type="text" name="reldate"/></td></tr>
+        <tr><td>Genre:</td><td><input type="text" name="genre"/></td></tr>
+        <tr><td>Director:</td><td><input type="text" name="director"/></td></tr>
+        <tr><td>Actors:</td><td><input type="text" name="actors"/></td></tr>
+        <tr><td>Story:</td><td><input type="text" name="story"/></td></tr>
+        <tr><td>Rating:</td><td><input type="text" name="rating"/></td></tr>
     </table>
     <button type="button" onclick="location.href='list'">목록보기</button>
     <button type="submit">추가하기</button>
