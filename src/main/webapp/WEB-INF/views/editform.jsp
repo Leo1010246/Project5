@@ -54,13 +54,14 @@
 
 <form method="POST" action="../editok">
 	<table id="edit">
-		<tr><td>ID:</td><td><input type="text" name="userId" value="${u.userId}"/></td></tr>
-		<tr><td>Name:</td><td><input type="text" name="userName" value="${u.userName}"/></td></tr>
-		<tr><td>Password:</td><td><input type="text" name="password" value="${u.password}"/></td></tr>
-		<tr><td>Email:</td><td><input type="text" name="email" value="${u.email}"/></td></tr>
-		<tr><td>BlogURL:</td><td><textarea cols="50" rows="3" name="blogUrl">${u.blogUrl}</textarea></td></tr>
-		<tr><td>Photo:</td><td><input type="text" name="photo" value="${u.photo}"/></td></tr>
-		<tr><td>Detail:</td><td><textarea cols="50" rows="5" name="detail">${u.detail}</textarea></td></tr>
+		<tr><td>Poster:</td><td><input type="text" name="poster" value="${u.poster}"/></td></tr>
+		<tr><td>Title:</td><td><input type="text" name="title" value="${u.title}"/></td></tr>
+		<tr><td>Reldate:</td><td><input type="text" name="reldate" value="${u.reldate}"/></td></tr>
+		<tr><td>Genre:</td><td><input type="text" name="genre" value="${u.genre}"/></td></tr>
+		<tr><td>Director:</td><td><input type="text" name="director" value="${u.director}"/></td></tr>
+		<tr><td>Actors:</td><td><input type="text" name="actors" value="${u.actors}"/></td></tr>
+		<tr><td>Story:</td><td><input type="text" name="story" value="${u.story}"/></td></tr>
+		<tr><td>Rating:</td><td><input type="text" name="rating" value="${u.rating}"/></td></tr>
 	</table>
 	<input type="submit" value="수정하기"/>
 	<input type="button" value="취소하기" onclick="history.back()"/>
