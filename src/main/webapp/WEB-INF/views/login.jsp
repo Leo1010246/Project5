@@ -16,6 +16,7 @@
 </style>
 </head>
 <body>
+
 <div style='width:100%;text-align:center;padding-top:100px'>
   <img src='../img/sea.jpg' height="250">
   <form method="post" action="loginOk">
@@ -25,4 +26,5 @@
     <button type='submit'>login</button>
   </form>
 </div>
+
 </body> </html>

@@ -4,22 +4,22 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Movie">
     <insert id="insertMovie">
-        insert into movie (poster, title, reldate, director, actors, story, rating)
+        insert into Movie (poster, title, reldate, genre, director, actors, story, rating)
         values
-        (#{poster}, #{title}, #{reldate}, #{director}, #{actors}, #{story}, #{rating})
+        (#{poster}, #{title}, #{reldate}, genre=#{genre}, #{director}, #{actors}, #{story}, #{rating})
     </insert>
     <update id="updateMovie">
-        update movie
-        set poster=#{poster}, title=#{title}, reldate=#{reldate}, director=#{director}, actors=#{actors}, story=#{story}, rating=#{rating}
-        where sid=#{sid}
+        update Movie
+        set poster=#{poster}, title=#{title}, reldate=#{reldate}, genre=#{genre}, director=#{director}, actors=#{actors}, story=#{story}, rating=#{rating}
+        where seq=#{seq}
     </update>
     <delete id="deleteMovie">
-        delete from movie where seq=#{seq}
+        delete from Movie where seq=#{seq}
     </delete>
     <select id="getMovie" resultType="movie">
-        select * from movie where seq=#{seq}
+        select * from Movie where seq=#{seq}
     </select>
     <select id="getMovieList" resultType="movie">
-        select * from movie order by seq desc
+        select * from Movie order by seq desc
     </select>
 </mapper>
