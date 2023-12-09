@@ -6,7 +6,7 @@
     <insert id="insertMovie">
         insert into Movie (poster, title, reldate, genre, director, actors, story, rating)
         values
-        (#{poster}, #{title}, #{reldate}, genre=#{genre}, #{director}, #{actors}, #{story}, #{rating})
+        (#{poster}, #{title}, #{reldate}, #{genre}, #{director}, #{actors}, #{story}, #{rating})
     </insert>
     <update id="updateMovie">
         update Movie

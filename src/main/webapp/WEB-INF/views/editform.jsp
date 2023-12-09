@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
+<%@page import="com.example.movie.MovieDAO, com.example.movie.MovieVO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
@@ -36,18 +37,43 @@
 
 <h1>Edit Form</h1>
 
-<%--@elvariable id="movieVO" type="com"--%>
-<form:form modelAttribute="movieVO" method="POST" action="../editok">
+<form:form modelAttribute="movieVO"
+		   method="POST"
+		   action="../editok">
 	<form:hidden path="seq"/>
 	<table id="edit">
-		<tr><td>Poster:</td><td><form:input path="poster" /></td></tr>
-		<tr><td>Title:</td><td><form:input path="title" /></td></tr>
-		<tr><td>Reldate:</td><td><form:input path="reldate" /></td></tr>
-		<tr><td>Genre:</td><td><form:input path="genre" /></td></tr>
-		<tr><td>Director:</td><td><form:input path="director" /></td></tr>
-		<tr><td>Actors:</td><td><form:input path="actors" /></td></tr>
-		<tr><td>Story:</td><td><form:input path="story" /></td></tr>
-        <tr><td>Rating:</td><td><form:input path="rating" /></td></tr>
+		<tr>
+			<td>Poster:</td>
+			<td><form:input path="poster"/></td>
+		</tr>
+		<tr>
+			<td>Title:</td>
+			<td><form:input path="title"/></td>
+		</tr>
+		<tr>
+			<td>Reldate:</td>
+			<td><form:input path="reldate"/></td>
+		</tr>
+		<tr>
+			<td>Genre:</td>
+			<td><form:input path="genre"/></td>
+		</tr>
+		<tr>
+			<td>Director:</td>
+			<td><form:input path="director"/></td>
+		</tr>
+		<tr>
+			<td>Actors:</td>
+			<td><form:input path="actors"/></td>
+		</tr>
+		<tr>
+			<td>Story:</td>
+			<td><form:input path="story"/></td>
+		</tr>
+		<tr>
+			<td>Rating:</td>
+			<td><form:input path="rating"/></td>
+		</tr>
 	</table>
 	<input type="submit" value="수정하기"/>
 	<input type="button" value="취소하기" onclick="history.back()"/>

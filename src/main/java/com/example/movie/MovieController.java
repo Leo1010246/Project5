@@ -38,10 +38,10 @@ public class MovieController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
-    public String editPost(@PathVariable("id") int id, Model model) {
-        MovieVO movieVO = movieService.getMovie(id);
-        model.addAttribute("u", movieVO);
+    @RequestMapping(value = "/editform/{seq}", method = RequestMethod.GET)
+    public String editPost(@PathVariable("seq") int seq, Model model) {
+        MovieVO movieVO = movieService.getMovie(seq);
+        model.addAttribute("movieVO", movieVO);
         return "editform";
     }
 
@@ -56,9 +56,9 @@ public class MovieController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-    public String deletePostOk(@PathVariable("id") int id) {
-        if(movieService.deleteMovie(id) == 0) {
+    @RequestMapping(value = "/deleteok/{seq}", method = RequestMethod.GET)
+    public String deletePostOk(@PathVariable("seq") int seq) {
+        if(movieService.deleteMovie(seq) == 0) {
             System.out.println("데이터 삭제 실패");
         }
         else {
