@@ -16,18 +16,18 @@ public class MovieController {
     @Autowired
     MovieServiceImpl movieService;
 
-    @RequestMapping(value = "/movielist", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String movielist(Model model) {
         model.addAttribute("list", movieService.getMovieList());
         return "list";
     }
 
-    @RequestMapping(value = "/addmovie", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost() {
-        return "addmoviepostform";
+        return "addpostform";
     }
 
-    @RequestMapping(value = "addmovieok", method = RequestMethod.POST)
+    @RequestMapping(value = "addok", method = RequestMethod.POST)
     public String addPostOk(MovieVO vo) {
         if(movieService.insertMovie(vo) == 0) {
             System.out.println("데이터 추가 실패");
@@ -38,14 +38,14 @@ public class MovieController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/editmovieform/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model) {
         MovieVO movieVO = movieService.getMovie(id);
         model.addAttribute("u", movieVO);
-        return "editmovieform";
+        return "editform";
     }
 
-    @RequestMapping(value = "/editmovieok", method = RequestMethod.POST)
+    @RequestMapping(value = "/editok", method = RequestMethod.POST)
     public String editPostOk(MovieVO vo) {
         if(movieService.updateMovie(vo) == 0) {
             System.out.println("데이터 수정 실패");
@@ -56,7 +56,7 @@ public class MovieController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/deletemovieok/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
     public String deletePostOk(@PathVariable("id") int id) {
         if(movieService.deleteMovie(id) == 0) {
             System.out.println("데이터 삭제 실패");
