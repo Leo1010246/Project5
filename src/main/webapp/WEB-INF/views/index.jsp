@@ -11,7 +11,7 @@
 
     <h1>Hello!!!</h1>
     <p>Movie!!!!!!!!!!</p>
-    <p> <a href="board/list">게시판으로 이동</a> </p>
+    <p> <a href="login/login">로그인으로 이동</a> </p>
 
 </body>
 </html>
