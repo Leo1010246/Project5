@@ -57,6 +57,13 @@ public class MovieVO {
         this.actors = actors;
     }
 
+    public String getStory() {
+        return story;
+    }
+    public void setStory(String story) {
+        this.story = story;
+    }
+
     public int getRating() {
         return rating;
     }

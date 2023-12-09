@@ -37,15 +37,16 @@
 <h1>Edit Form</h1>
 
 <%--<form:form modelAttribute="boardVO" method="POST" action="../editok">--%>
-<%--	<form:hidden path="sid"/>--%>
+<%--	<form:hidden path="seq"/>--%>
 <%--	<table id="edit">--%>
-<%--		<tr><td>ID:</td><td><form:input path="userId" /></td></tr>--%>
-<%--		<tr><td>Name:</td><td><form:input path="userName" /></td></tr>--%>
-<%--		<tr><td>Password:</td><td><form:input path="password" /></td></tr>--%>
-<%--		<tr><td>Email:</td><td><form:input path="email" /></td></tr>--%>
-<%--		<tr><td>BlogURL:</td><td><form:textarea cols="50" rows="3" path="blogUrl" /></td></tr>--%>
-<%--		<tr><td>Photo:</td><td><form:input path="photo" /></td></tr>--%>
-<%--		<tr><td>Detail:</td><td><form:textarea cols="50" rows="5" path="detail" /></td></tr>--%>
+<%--		<tr><td>Poster:</td><td><form:input path="poster" /></td></tr>--%>
+<%--		<tr><td>Title:</td><td><form:input path="title" /></td></tr>--%>
+<%--		<tr><td>Reldate:</td><td><form:input path="reldate" /></td></tr>--%>
+<%--		<tr><td>Genre:</td><td><form:input path="genre" /></td></tr>--%>
+<%--		<tr><td>Director:</td><td><form:input path="director" /></td></tr>--%>
+<%--		<tr><td>Actors:</td><td><form:input path="actors" /></td></tr>--%>
+<%--		<tr><td>Story:</td><td><form:input path="story" /></td></tr>--%>
+<%--        <tr><td>Rating:</td><td><form:input path="rating" /></td></tr>--%>
 <%--	</table>--%>
 <%--	<input type="submit" value="수정하기"/>--%>
 <%--	<input type="button" value="취소하기" onclick="history.back()"/>--%>

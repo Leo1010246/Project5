@@ -44,41 +44,43 @@
 </head>
 <body>
 
-<h1>유저게시판</h1>
+<h1>영화게시판</h1>
 
 <img src="../img/sea.jpg" width="500" />
 
 <table id="list" width="90%">
     <tr>
-        <th>Sid</th>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Password</th>
-        <th>Email</th>
-        <th>BlogURL</th>
-        <th>Photo</th>
-        <th>Detail</th>
+        <th>Seq</th>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Reldate</th>
+        <th>Genre</th>
+        <th>Director</th>
+        <th>Actors</th>
+        <th>Story</th>
+        <th>Rating</th>
         <th>Regdate</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
     <c:forEach items="${list}" var="u">
         <tr>
-            <td>${u.sid}</td>
-            <td>${u.userId}</td>
-            <td>${u.userName}</td>
-            <td>${u.password}</td>
-            <td>${u.email}</td>
-            <td>${u.blogUrl}</td>
-            <td>${u.photo}</td>
-            <td>${u.detail}</td>
+            <td>${u.seq}</td>
+            <td>${u.poster}</td>
+            <td>${u.title}</td>
+            <td>${u.reldate}</td>
+            <td>${u.genre}</td>
+            <td>${u.director}</td>
+            <td>${u.actors}</td>
+            <td>${u.story}</td>
+            <td>${u.rating}</td>
             <td>${u.regdate}</td>
-            <td><a href="editform/${u.sid}">Edit</a></td>
-            <td><a href="javascript:delete_ok('${u.sid}')">Delete</a></td>
+            <td><a href="editform/${u.seq}">Edit</a></td>
+            <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
-<br/><button type="button" onclick="location.href='add'">유저추가</button>
+<br/><button type="button" onclick="location.href='add'">영화추가</button>
 
 </body>
 </html>

@@ -16,18 +16,18 @@ public class BoardController {
     @Autowired
     BoardServiceImpl boardService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/listbbb", method = RequestMethod.GET)
     public String boardlist(Model model) {
         model.addAttribute("list", boardService.getBoardList());
         return "list";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/addbbb", method = RequestMethod.GET)
     public String addPost() {
         return "addpostform";
     }
 
-    @RequestMapping(value = "addok", method = RequestMethod.POST)
+    @RequestMapping(value = "addokbbb", method = RequestMethod.POST)
     public String addPostOk(BoardVO vo) {
         if(boardService.insertBoard(vo) == 0) {
             System.out.println("데이터 추가 실패");
@@ -38,14 +38,14 @@ public class BoardController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editformbbb/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model) {
         BoardVO boardVO = boardService.getBoard(id);
         model.addAttribute("u", boardVO);
         return "editform";
     }
 
-    @RequestMapping(value = "/editok", method = RequestMethod.POST)
+    @RequestMapping(value = "/editokbbb", method = RequestMethod.POST)
     public String editPostOk(BoardVO vo) {
         if(boardService.updateBoard(vo) == 0) {
             System.out.println("데이터 수정 실패");
@@ -56,7 +56,7 @@ public class BoardController {
         return "redirect:list";
     }
 
-    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteokbbb/{id}", method = RequestMethod.GET)
     public String deletePostOk(@PathVariable("id") int id) {
         if(boardService.deleteBoard(id) == 0) {
             System.out.println("데이터 삭제 실패");
