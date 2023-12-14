@@ -7,24 +7,39 @@
     <title>영화추가</title>
     <link rel="stylesheet" href="${path}/resourses/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .filebox input[type="file"] {
+            position: absolute;
+            width: 0;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+        }
+    </style>
 </head>
+
 <body class="bg-light">
     <div class="container">
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="../img/logo.svg" alt="" width="72" height="72">
             <h2>영화추가</h2>
         </div>
+    </div>
 
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <h4 class="mb-3">영화 정보 입력</h4>
-            <form action="addok" method="post">
+            <form action="addok" method="post" enctype="multipart/form-data">
                 <table id="edit">
 
                     <div class="mb-3">
-                        <label for="poster">포스터</label><span class="text-muted">(Optional)</span></label>
-                        <input type="text" class="form-control mb-2" id="poster" name="poster">
-                        <button class="btn btn-outline-primary btn-sm btn-block">포스터 업로드</button>
+                        <label for="upload-name">포스터</label><span class="text-muted">(Optional)</span></label>
+                        <div class="filebox">
+                            <input class="form-control mb-2 upload-name" id="upload-name" name="poster" value="첨부파일" placeholder="첨부파일" readonly>
+                            <label class="btn btn-outline-primary btn-sm btn-block" for="input-file">포스터 업로드</label>
+                            <input type="file" name="poster" id="input-file">
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -61,11 +76,6 @@
                         <textarea class="form-control" cols="50" rows="5" id="story" name="story" required></textarea>
                     </div>
 
-<%--                    <div class="mb-3">--%>
-<%--                        <label for="rating">평점</label>--%>
-<%--                        <input type="range" class="form-control" id="rating" name="rating" min="1" max="5" required>--%>
-<%--                    </div>--%>
-
                     <div class="mb-3">
                         <label for="rating">평점 선택</label>
                         <select id="rating" class="form-control" name="rating" required>
@@ -85,7 +95,6 @@
             </form>
         </div>
     </div>
-</form>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2023-2 실전프로젝트1</p>
@@ -93,5 +102,18 @@
             <li class="list-inline-item"><a href="#">Back to top</a></li>
         </ul>
     </footer>
+    <script>
+        document.getElementById('input-file').addEventListener('change', function() {
+            var fullPath = document.getElementById('input-file').value;
+            if (fullPath) {
+                var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+                var filename = fullPath.substring(startIndex);
+                if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                    filename = filename.substring(1);
+                }
+                document.getElementById('upload-name').value = filename;
+            }
+        });
+    </script>
 </body>
 </html>
