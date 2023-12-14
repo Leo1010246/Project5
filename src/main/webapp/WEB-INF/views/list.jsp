@@ -33,7 +33,7 @@
                     <strong>영화게시판</strong>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a class="btn btn-primary me-md-2" onclick="location.href='add'">영화추가</a>
-                        <a class="btn btn-link"></a>
+                        <span></span>
                         <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
                     </div>
                 </a>
@@ -48,7 +48,7 @@
                     <c:forEach items="${list}" var="u">
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">${u.poster}</text></svg>
+                                <img class="bd-placeholder-img card-img-top" src="../img/sea.jpg" alt="..."><%--${u.poster}--%>
                                 <div class="card-body">
                                     <p class="card-text">제목: ${u.title}</p>
                                     <p class="card-text">개봉일: ${u.reldate}</p>
