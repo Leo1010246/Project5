@@ -36,10 +36,9 @@ public class MovieController {
     @RequestMapping(value = "addok", method = RequestMethod.POST)
     public String addPostOk(HttpServletRequest request) {
 
-        if(movieService.insertMovie(request) == 0) {
+        if (movieService.insertMovie(request) == 0) {
             System.out.println("데이터 추가 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 추가 성공!!!");
         }
         return "redirect:list";
@@ -54,10 +53,9 @@ public class MovieController {
 
     @RequestMapping(value = "/editok/{seq}", method = RequestMethod.POST)
     public String editPostOk(@PathVariable("seq") int seq, HttpServletRequest request) {
-        if(movieService.updateMovie(request, seq) == 0) {
+        if (movieService.updateMovie(request, seq) == 0) {
             System.out.println("데이터 수정 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 수정 성공!!!");
         }
         return "redirect:list";
@@ -65,10 +63,9 @@ public class MovieController {
 
     @RequestMapping(value = "/deleteok/{seq}", method = RequestMethod.GET)
     public String deletePostOk(@PathVariable("seq") int seq) {
-        if(movieService.deleteMovie(seq) == 0) {
+        if (movieService.deleteMovie(seq) == 0) {
             System.out.println("데이터 삭제 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 삭제 성공!!!");
         }
         return "redirect:../list";
@@ -80,3 +77,4 @@ public class MovieController {
         model.addAttribute("u", movieVO);
         return "view";
     }
+}

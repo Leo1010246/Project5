@@ -13,7 +13,7 @@ public class FileUpload {
         int sizeLimit = 15 * 1024 * 1024;
 
         // 실제로 서버에 저장되는 path를 upload로 정한다.
-        String realPath = request.getServletContext().getRealPath("upload"); //upload 폴더의 패스 찾아옴. 디스패처서블릿에 연결한 그거.
+        String realPath = request.getServletContext().getRealPath("resources/upload"); //upload 폴더의 패스 찾아옴. 디스패처서블릿에 연결한 그거.
 
         // 만약 저장될 경로에 upload 폴더가 존재하지 않으면 생성
         File dir = new File(realPath);
@@ -30,6 +30,8 @@ public class FileUpload {
             if (seq != null && !seq.equals(""))
                 one.setSeq(Integer.parseInt(seq));
             one.setTitle(multipartRequest.getParameter("title"));
+            System.out.print("title:");
+            System.out.println(multipartRequest.getParameter("title"));
             one.setGenre(multipartRequest.getParameter("genre"));
             one.setReldate(multipartRequest.getParameter("reldate"));
             one.setDirector(multipartRequest.getParameter("director"));
@@ -51,7 +53,7 @@ public class FileUpload {
     }
 
     public static void deleteFile (HttpServletRequest request, String filename) {
-        String filePath = request.getServletContext().getRealPath("upload");
+        String filePath = request.getServletContext().getRealPath("resources/upload");
 
         File f = new File(filePath + "/" + filename);
         if (f.exists()) f.delete();
