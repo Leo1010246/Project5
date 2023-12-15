@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
+<%@page import="com.example.movie.MovieDAO, com.example.movie.MovieVO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
@@ -36,7 +36,7 @@
 
 <h1>Edit Form</h1>
 
-<form:form modelAttribute="boardVO" method="POST" action="../editok">
+<form:form modelAttribute="movieVO" method="POST" action="../editok">
 	<form:hidden path="seq"/>
 	<table id="edit">
 		<tr><td>Poster:</td><td><form:input path="poster" /></td></tr>
