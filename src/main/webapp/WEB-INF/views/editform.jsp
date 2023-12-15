@@ -32,7 +32,7 @@
 <div class="row justify-content-md-center">
 	<div class="col-md-auto">
 		<h4 class="mb-3">영화 정보 입력</h4>
-		<form action="../editok" method="post" enctype="multipart/form-data">
+		<form action="../editok/${seq}" method="post" enctype="multipart/form-data">
 			<table id="edit">
 
 				<div class="mb-3">
