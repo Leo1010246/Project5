@@ -37,6 +37,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
         }
+
     </style>
 </head>
 <body>
@@ -91,6 +92,7 @@
     </div>
 </main>
 
+
     <script>
         // 팝업 열기
         function openPopup(url) {
@@ -117,13 +119,7 @@
         <br>
     </div>
 </footer>
-<div class="modal" id="myModal">
-    <div class="modal-content">
-        <span class="close" id="closeModal">&times;</span>
-        <div id="modalContent"></div>
-    </div>
-</div>
-<script src="script.js"></script>
+
 
 <%--<h1>영화게시판</h1>--%>
 

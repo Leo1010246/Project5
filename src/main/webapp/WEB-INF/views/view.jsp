@@ -44,8 +44,7 @@
                 <div class="row mb-4 shadow-sm">
 
                     <div class="imgBox">
-<%--                        <img src="${u.poster}" />--%>
-                        <img src="../../img/xmas.jpg" width="600" height="700" class="me-2"/>
+                        <img src="../../upload/${u.poster}" width="600" height="700" class="me-2"/>
                     </div>
                     <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
                     <div class="textBox">
