@@ -77,4 +77,11 @@ public class MovieController {
         model.addAttribute("u", movieVO);
         return "view";
     }
+
+    @RequestMapping(value = "/modal/{seq}", method = RequestMethod.GET)
+    public String modalPost(@PathVariable("seq") int seq, Model model) {
+        MovieVO movieVO = movieService.getMovie(seq);
+        model.addAttribute("u", movieVO);
+        return "modal";
+    }
 }
