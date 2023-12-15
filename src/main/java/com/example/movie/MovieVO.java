@@ -11,7 +11,7 @@ public class MovieVO {
     private String director;
     private String actors;
     private String story;
-    private Integer rating;
+    private int rating;
     private Date regdate;
 
     public int getSeq() {
