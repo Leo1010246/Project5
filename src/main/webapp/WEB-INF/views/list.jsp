@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: gram
-  Date: 2023-11-28
-  Time: 오후 4:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -37,7 +30,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
         }
-
     </style>
 </head>
 <body>
@@ -63,7 +55,7 @@
                 <c:forEach items="${list}" var="u">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" src="../img/sea.jpg" alt="..."><%--${u.poster}--%>
+                            <div width="223px" height="320px"><img class="bd-placeholder-img card-img-top" src="${path}/resources/upload/${u.getPoster()}" alt="..."></div>
                             <div class="card-body">
                                 <p class="card-text">제목: ${u.title}</p>
                                 <p class="card-text">개봉일: ${u.reldate}</p>
@@ -73,7 +65,6 @@
                                 <p class="card-text">평점: ${u.rating}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-<%--                                        <button type="button" class="btn btn-sm btn-outline-secondary view-button"><a href="view/${u.seq}">View</a></button>--%>
                                         <button type="button" class="btn btn-sm btn-outline-secondary view-button" onclick="openPopup('view/${u.seq}')">View</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary"><a href="editform/${u.seq}">Edit</a></button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary delete-button" onclick="delete_ok('${u.seq}')">Delete</button>
@@ -91,7 +82,6 @@
         </div>
     </div>
 </main>
-
 
     <script>
         // 팝업 열기
@@ -119,45 +109,6 @@
         <br>
     </div>
 </footer>
-
-
-<%--<h1>영화게시판</h1>--%>
-
-<%--<img src="../img/sea.jpg" width="500" />--%>
-
-<%--<table id="list" width="90%">--%>
-<%--    <tr>--%>
-<%--        <th>Seq</th>--%>
-<%--        <th>Poster</th>--%>
-<%--        <th>Title</th>--%>
-<%--        <th>Reldate</th>--%>
-<%--        <th>Genre</th>--%>
-<%--        <th>Director</th>--%>
-<%--        <th>Actors</th>--%>
-<%--        <th>Story</th>--%>
-<%--        <th>Rating</th>--%>
-<%--        <th>Regdate</th>--%>
-<%--        <th>Edit</th>--%>
-<%--        <th>Delete</th>--%>
-<%--    </tr>--%>
-<%--    <c:forEach items="${list}" var="u">--%>
-<%--        <tr>--%>
-<%--            <td>${u.seq}</td>--%>
-<%--            <td>${u.poster}</td>--%>
-<%--            <td>${u.title}</td>--%>
-<%--            <td>${u.reldate}</td>--%>
-<%--            <td>${u.genre}</td>--%>
-<%--            <td>${u.director}</td>--%>
-<%--            <td>${u.actors}</td>--%>
-<%--            <td>${u.story}</td>--%>
-<%--            <td>${u.rating}</td>--%>
-<%--            <td>${u.regdate}</td>--%>
-<%--            <td><a href="editform/${u.seq}">Edit</a></td>--%>
-<%--            <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
-<%--</table>--%>
-<%--<br/><button type="button" onclick="location.href='add'">영화추가</button>--%>
-<%--<br/><button type="button" onclick="location.href='../login/logout'">로그아웃</button>--%>
+<script src="script.js"></script>
 </body>
 </html>
