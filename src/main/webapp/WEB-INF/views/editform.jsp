@@ -40,32 +40,33 @@
 	<form:hidden path="seq"/>
 	<table id="edit">
 		<tr><td>Poster:</td><td><form:input path="poster" /></td></tr>
-		<tr><td>Title:</td><td><form:input path="title" /></td></tr>
+
+		<div class="mb-3">
+			<label for="title">영화제목</label>
+			<form:input path="title" />
+		</div>
+
 		<tr><td>Reldate:</td><td><form:input path="reldate" /></td></tr>
 		<tr><td>Genre:</td><td><form:input path="genre" /></td></tr>
 		<tr><td>Director:</td><td><form:input path="director" /></td></tr>
 		<tr><td>Actors:</td><td><form:input path="actors" /></td></tr>
 		<tr><td>Story:</td><td><form:input path="story" /></td></tr>
-        <tr><td>Rating:</td><td><form:input path="rating" /></td></tr>
+
+		<div class="mb-3">
+			<label for="rating">평점 선택</label>
+				<form:select path="rating">
+					<form:option value="${null}" label="평점을 선택하세요."/>
+					<form:option value="1" label="1점" />
+					<form:option value="2" label="2점" />
+					<form:option value="3" label="3점" />
+					<form:option value="4" label="4점" />
+					<form:option value="5" label="5점" />
+				</form:select>
+		</div>
 	</table>
 	<input type="submit" value="수정하기"/>
 	<input type="button" value="취소하기" onclick="history.back()"/>
 </form:form>
-
-<%--<form method="POST" action="../editok">--%>
-<%--	<table id="edit">--%>
-<%--		<tr><td>Poster:</td><td><input type="text" name="poster" value="${u.poster}"/></td></tr>--%>
-<%--		<tr><td>Title:</td><td><input type="text" name="title" value="${u.title}"/></td></tr>--%>
-<%--		<tr><td>Reldate:</td><td><input type="text" name="reldate" value="${u.reldate}"/></td></tr>--%>
-<%--		<tr><td>Genre:</td><td><input type="text" name="genre" value="${u.genre}"/></td></tr>--%>
-<%--		<tr><td>Director:</td><td><input type="text" name="director" value="${u.director}"/></td></tr>--%>
-<%--		<tr><td>Actors:</td><td><input type="text" name="actors" value="${u.actors}"/></td></tr>--%>
-<%--		<tr><td>Story:</td><td><input type="text" name="story" value="${u.story}"/></td></tr>--%>
-<%--		<tr><td>Rating:</td><td><input type="text" name="rating" value="${u.rating}"/></td></tr>--%>
-<%--	</table>--%>
-<%--	<input type="submit" value="수정하기"/>--%>
-<%--	<input type="button" value="취소하기" onclick="history.back()"/>--%>
-<%--</form>--%>
 
 </body>
 </html>

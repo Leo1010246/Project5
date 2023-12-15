@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>영화추가</title>
-    <link rel="stylesheet" href="${path}/resourses/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <style>
         .filebox input[type="file"] {
@@ -37,14 +36,13 @@
                         <label for="upload-name">포스터</label><span class="text-muted">(Optional)</span></label>
                         <div class="filebox">
                             <input class="form-control mb-2 upload-name" id="upload-name" name="poster" value="첨부파일" placeholder="첨부파일" readonly>
-                            <label class="btn btn-outline-primary btn-sm btn-block" for="input-file">포스터 업로드</label>
-                            <input type="file" name="poster" id="input-file">
+                            <label class="btn btn-outline-primary btn-sm btn-block" for="poster">포스터 업로드</label>
+                            <input type="file" name="poster" id="poster">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="title">영화제목</label>
-                        <div class="invalid-feedback">영화제목을 입력하세요.</div>
                         <input type="text" class="form-control" id="title" name="title" required>
                     </div>
 
@@ -52,7 +50,6 @@
                         <label for="reldate">개봉일</label>
                         <div class="input-group">
                             <input type="date" class="form-control" id="reldate" name="reldate" required>
-                            <div class="invalid-feedback" style="width: 100%;">예약 날짜를 선택하세요.</div>
                         </div>
                     </div>
 
