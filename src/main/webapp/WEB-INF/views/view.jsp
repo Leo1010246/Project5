@@ -49,19 +49,19 @@
                     <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
                     <div class="textBox">
                         <div>
-                            <p>제목: ${u.title}</p>
+                            <textarea readonly style="border: none" cols="60" rows="1">제목: ${u.title}</textarea>
                         </div>
                         <div>
-                            <p>개봉일: ${u.reldate}</p>
+                            <textarea readonly style="border: none" cols="60" rows="1">개봉일: ${u.reldate}</textarea>
                         </div>
                         <div>
-                            <p>장르: ${u.genre}</p>
+                            <textarea readonly style="border: none" cols="60" rows="1">장르: ${u.genre}</textarea>
                         </div>
                         <div>
-                            <p>감독: ${u.director}</p>
+                            <textarea readonly style="border: none" cols="60" rows="1">감독: ${u.director}</textarea>
                         </div>
                         <div>
-                            <p>배우: ${u.actors}</p>
+                            <textarea readonly style="border: none" cols="60" rows="1">배우: ${u.actors}</textarea>
                         </div>
                         <div>
                             <textarea readonly style="border: none" cols="60" rows="10">줄거리: ${u.story}</textarea>
