@@ -55,7 +55,7 @@
                 <c:forEach items="${list}" var="u">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <div width="223px" height="320px"><img class="bd-placeholder-img card-img-top" src="${path}/resources/upload/${u.getPoster()}" alt="..."></div>
+                            <div width="223px" height="320px"><img class="bd-placeholder-img card-img-top" src="../upload/${u.poster}" alt="..."></div>
                             <div class="card-body">
                                 <p class="card-text">제목: ${u.title}</p>
                                 <p class="card-text">개봉일: ${u.reldate}</p>
