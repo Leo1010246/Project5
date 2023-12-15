@@ -33,29 +33,29 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <img src="../img/logo.svg" width="40" height="40" class="me-2">
-                    <strong>영화게시판</strong>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a class="btn btn-primary me-md-2" onclick="location.href='add'">영화추가</a>
-                        <span></span>
-                        <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
-                    </div>
-                </a>
-            </div>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="../img/logo.svg" width="40" height="40" style="margin-right: 10px;">  <!-- 이미지와 strong 태그 사이 간격 -->
+                <strong>영화게시판</strong>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a class="btn btn-primary me-md-2" style="margin-right: 10px;" onclick="location.href='add'">영화추가</a>  <!-- 버튼 사이 간격 -->
+                    <a class="btn btn-outline-primary me-md-2" onclick="location.href='../login/logout'">로그아웃</a>
+                </div>
+            </a>
         </div>
-    </header>
+    </div>
+</header>
+
 <main role="main">
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row"> <!-- Row 추가 -->
                 <c:forEach items="${list}" var="u">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <div width="223px" height="320px"><img class="bd-placeholder-img card-img-top" src="../upload/${u.poster}" alt="..."></div>
+                            <img class="img-fluid rounded-start" src="../upload/${u.poster}" alt="..." style="height: 300px; object-fit: cover;">
                             <div class="card-body">
                                 <p class="card-text">제목: ${u.title}</p>
                                 <p class="card-text">개봉일: ${u.reldate}</p>
@@ -71,17 +71,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <small class="text-muted">작성일: ${u.regdate}</small>
+                            </div>
                         </div>
-                        <!-- 팝업 컨테이너 -->
-                        <div id="popup-container">
-                            <!-- 팝업 내용이 비어있는 상태 -->
-                        </div>
+                        <div id="popup-container"></div>
                     </div>
                 </c:forEach>
-            </div>
+            </div> <!-- Row 추가 -->
         </div>
     </div>
 </main>
+
 
     <script>
         // 팝업 열기
