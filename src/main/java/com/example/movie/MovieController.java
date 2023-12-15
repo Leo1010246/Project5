@@ -34,12 +34,11 @@ public class MovieController {
     }
 
     @RequestMapping(value = "addok", method = RequestMethod.POST)
-    public String addPostOk(MovieVO vo, HttpServletRequest request) {
-        System.out.println(vo.getPoster());
-        if(movieService.insertMovie(vo) == 0) {
+    public String addPostOk(HttpServletRequest request) {
+
+        if (movieService.insertMovie(request) == 0) {
             System.out.println("데이터 추가 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 추가 성공!!!");
         }
         return "redirect:list";
@@ -52,12 +51,11 @@ public class MovieController {
         return "editform";
     }
 
-    @RequestMapping(value = "/editok", method = RequestMethod.POST)
-    public String editPostOk(MovieVO vo) {
-        if(movieService.updateMovie(vo) == 0) {
+    @RequestMapping(value = "/editok/{seq}", method = RequestMethod.POST)
+    public String editPostOk(@PathVariable("seq") int seq, HttpServletRequest request) {
+        if (movieService.updateMovie(request, seq) == 0) {
             System.out.println("데이터 수정 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 수정 성공!!!");
         }
         return "redirect:list";
@@ -65,18 +63,18 @@ public class MovieController {
 
     @RequestMapping(value = "/deleteok/{seq}", method = RequestMethod.GET)
     public String deletePostOk(@PathVariable("seq") int seq) {
-        if(movieService.deleteMovie(seq) == 0) {
+        if (movieService.deleteMovie(seq) == 0) {
             System.out.println("데이터 삭제 실패");
-        }
-        else {
+        } else {
             System.out.println("데이터 삭제 성공!!!");
         }
         return "redirect:../list";
     }
 
-//    @RequestMapping(value = "/upload") // 파일 업로드를 처리하는 URL을 지정합니다.
-//    public String handleFileUpload() {
-//
-//    }
-
+    @RequestMapping(value = "/view/{seq}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("seq") int seq, Model model) {
+        MovieVO movieVO = movieService.getMovie(seq);
+        model.addAttribute("u", movieVO);
+        return "view";
+    }
 }
