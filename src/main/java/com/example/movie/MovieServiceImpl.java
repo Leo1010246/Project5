@@ -1,11 +1,10 @@
 package com.example.movie;
 
-import com.example.movie.MovieDAO;
-import com.example.movie.MovieService;
-import com.example.movie.MovieVO;
+import com.example.util.FileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -15,7 +14,8 @@ public class MovieServiceImpl implements MovieService {
     MovieDAO movieDAO;
 
     @Override
-    public int insertMovie(MovieVO vo) {
+    public int insertMovie(HttpServletRequest request) {
+        MovieVO vo = FileUpload.UploadImg(request, null);
         return movieDAO.insertMovie(vo);
     }
 
@@ -25,7 +25,8 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public int updateMovie(MovieVO vo) {
+    public int updateMovie(HttpServletRequest request, int seq) {
+        MovieVO vo = FileUpload.UploadImg(request, movieDAO.getPoster(seq));
         return movieDAO.updateMovie(vo);
     }
 

@@ -19,6 +19,11 @@ public class MovieDAO {
         return result;
     }
 
+    public String getPoster(int seq) {
+        String result = sqlSession.selectOne("Movie.getPoster", seq);
+        return result;
+    }
+
     // 글 삭제
     public int deleteMovie(int seq) {
         int result = sqlSession.delete("Movie.deleteMovie", seq);

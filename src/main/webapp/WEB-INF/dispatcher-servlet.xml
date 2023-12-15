@@ -13,6 +13,7 @@
     </bean>
 
     <mvc:resources mapping="/img/**" location="/resourses/img/" />
+    <mvc:resources mapping="/upload/**" location="/resourses/upload/" />
 <!--    <mvc:resources mapping="/js/**" location="/resourses/js/" />-->
     <bean id="loginCheckInterceptor" class="com.example.util.LoginCheckInterceptor"/>
 

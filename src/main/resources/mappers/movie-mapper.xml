@@ -22,4 +22,7 @@
     <select id="getMovieList" resultType="movie">
         select * from Movie order by seq desc
     </select>
+    <select id="getPoster" resultType="String">
+        select poster from Movie where seq=#{seq}
+    </select>
 </mapper>
