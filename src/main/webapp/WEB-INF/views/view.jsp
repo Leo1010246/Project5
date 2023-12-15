@@ -6,18 +6,17 @@
   Time: 오후 3:50
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%@ page contentType="text/html" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 <%@page import="com.example.movie.MovieDAO, com.example.movie.MovieVO"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%--<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>--%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>영화 상세</title>
     <link rel="stylesheet" href="../../resourses/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../resourses/css/style.css">
     <script>
         function delete_ok(id){
             var a = confirm("정말로 삭제하겠습니까?");
@@ -67,8 +66,8 @@
                     <h3 style="color:white"><a onclick="history.back()">영화 상세</a></h3>
                 </nav>
                 <nav class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="button" onclick="history.back()">돌아가기</button>
-                    <button type="button" onclick="location.href='../login/logout'">로그아웃</button>
+                    <a class="btn btn-outline-primary" onclick="history.back()">돌아가기</a>
+                    <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
                 </nav>
             </div>
         </div>
@@ -83,7 +82,7 @@
 
                     <div class="imgBox">
 <%--                        <img src="${u.poster}" />--%>
-                        <img src="../img/xmas.jpg" width="600" height="700" class="me-2"/>
+                        <img src="/img/xmas.jpg" width="600" height="700" class="me-2"/>
                     </div>
                     <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
                     <div class="textBox">
@@ -111,8 +110,8 @@
                         <div class="d-flex justify-content-between align-items-center wrap">
                             <div class="btn-group">
 <%--                                <br/><button type="button" onclick="location.href='add'">영화추가</button>--%>
-                                <br/><button type="button" onclick="location.href='editform/${u.seq}'">영화편집</button>
-                                <br/><button type="button" onclick="location.href='javascript:delete_ok(\'${u.seq}\')'">영화삭제</button>
+                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='editform/${u.seq}'">영화편집</button>
+                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='javascript:delete_ok(\'${u.seq}\')'">영화삭제</button>
                             </div>
                         </div>
                     </div>
