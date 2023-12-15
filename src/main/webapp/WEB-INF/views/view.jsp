@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 <%@page import="com.example.movie.MovieDAO, com.example.movie.MovieVO"%>
@@ -59,7 +60,7 @@
                 </nav>
                 <nav class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a class="btn btn-outline-primary" onclick="history.back()">돌아가기</a>
-                    <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
+                    <a class="btn btn-outline-primary" onclick="location.href='../../login/logout'">로그아웃</a>
                 </nav>
             </div>
         </div>
@@ -74,7 +75,7 @@
 
                     <div class="imgBox">
 <%--                        <img src="${u.poster}" />--%>
-                        <img src="/img/xmas.jpg" width="600" height="700" class="me-2"/>
+                        <img src="../../img/xmas.jpg" width="600" height="700" class="me-2"/>
                     </div>
                     <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
                     <div class="textBox">
@@ -102,8 +103,8 @@
                         <div class="d-flex justify-content-between align-items-center wrap">
                             <div class="btn-group">
 <%--                                <br/><button type="button" onclick="location.href='add'">영화추가</button>--%>
-                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='editform/${u.seq}'">영화편집</button>
-                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='javascript:delete_ok(\'${u.seq}\')'">영화삭제</button>
+                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='../editform/${u.seq}'">영화편집</button>
+                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='javascript:../delete_ok(\'${u.seq}\')'">영화삭제</button>
                             </div>
                         </div>
                     </div>
