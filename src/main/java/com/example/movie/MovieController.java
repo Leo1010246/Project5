@@ -74,6 +74,13 @@ public class MovieController {
         return "redirect:../list";
     }
 
+    @RequestMapping(value = "/view/{seq}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("seq") int seq, Model model) {
+        MovieVO movieVO = movieService.getMovie(seq);
+        model.addAttribute("u", movieVO);
+        return "view";
+    }
+
 //    @RequestMapping(value = "/upload") // 파일 업로드를 처리하는 URL을 지정합니다.
 //    public String handleFileUpload() {
 //
