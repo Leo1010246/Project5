@@ -34,9 +34,9 @@ public class MovieController {
     }
 
     @RequestMapping(value = "addok", method = RequestMethod.POST)
-    public String addPostOk(MovieVO vo, HttpServletRequest request) {
-        System.out.println(vo.getPoster());
-        if(movieService.insertMovie(vo) == 0) {
+    public String addPostOk(HttpServletRequest request) {
+
+        if(movieService.insertMovie(request) == 0) {
             System.out.println("데이터 추가 실패");
         }
         else {
@@ -52,9 +52,9 @@ public class MovieController {
         return "editform";
     }
 
-    @RequestMapping(value = "/editok", method = RequestMethod.POST)
-    public String editPostOk(MovieVO vo) {
-        if(movieService.updateMovie(vo) == 0) {
+    @RequestMapping(value = "/editok/{seq}", method = RequestMethod.POST)
+    public String editPostOk(@PathVariable("seq") int seq, HttpServletRequest request) {
+        if(movieService.updateMovie(request, seq) == 0) {
             System.out.println("데이터 수정 실패");
         }
         else {
@@ -80,10 +80,3 @@ public class MovieController {
         model.addAttribute("u", movieVO);
         return "view";
     }
-
-//    @RequestMapping(value = "/upload") // 파일 업로드를 처리하는 URL을 지정합니다.
-//    public String handleFileUpload() {
-//
-//    }
-
-}

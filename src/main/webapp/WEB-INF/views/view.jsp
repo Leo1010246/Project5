@@ -1,11 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: gram
-  Date: 2023-12-09
-  Time: 오후 3:50
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 <%@page import="com.example.movie.MovieDAO, com.example.movie.MovieVO"%>
 <%--<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>--%>
@@ -265,6 +258,5 @@
 <%--        }--%>
 <%--    };--%>
 <%--</script>--%>
-
 </body>
 </html>
