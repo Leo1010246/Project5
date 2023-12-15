@@ -56,7 +56,6 @@
 </head>
 <body>
 
-<%--<c:forEach items="${list}" var="u">--%>
 
 <div>
     <header>
@@ -130,7 +129,7 @@
         </div>
     </footer>
 </div>
-<%--</c:forEach>--%>
+
 
 <%--<table id="list" width="90%">--%>
 <%--    <tr>--%>
