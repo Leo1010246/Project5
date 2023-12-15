@@ -1,13 +1,19 @@
 package com.example.movie;
 
-import com.example.movie.MovieServiceImpl;
-import com.example.movie.MovieVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 @RequestMapping("/movie")
@@ -28,7 +34,8 @@ public class MovieController {
     }
 
     @RequestMapping(value = "addok", method = RequestMethod.POST)
-    public String addPostOk(MovieVO vo) {
+    public String addPostOk(MovieVO vo, HttpServletRequest request) {
+        System.out.println(vo.getPoster());
         if(movieService.insertMovie(vo) == 0) {
             System.out.println("데이터 추가 실패");
         }
@@ -67,11 +74,9 @@ public class MovieController {
         return "redirect:../list";
     }
 
-    @RequestMapping(value = "/view/{seq}", method = RequestMethod.GET)
-    public String movieview(@PathVariable("seq") int seq, Model model) {
-        MovieVO movieVO = movieService.getMovie(seq);
-        model.addAttribute("u", movieVO);
-        return "view";
-    }
+//    @RequestMapping(value = "/upload") // 파일 업로드를 처리하는 URL을 지정합니다.
+//    public String handleFileUpload() {
+//
+//    }
 
 }
