@@ -67,4 +67,11 @@ public class MovieController {
         return "redirect:../list";
     }
 
+    @RequestMapping(value = "/view/{seq}", method = RequestMethod.GET)
+    public String movieview(@PathVariable("seq") int seq, Model model) {
+        MovieVO movieVO = movieService.getMovie(seq);
+        model.addAttribute("u", movieVO);
+        return "view";
+    }
+
 }
