@@ -32,15 +32,15 @@
 <div class="row justify-content-md-center">
 	<div class="col-md-auto">
 		<h4 class="mb-3">영화 정보 입력</h4>
-		<form action="../editok/${seq}" method="post" enctype="multipart/form-data">
+		<form action="../editok/${movieVO.getSeq()}" method="post" enctype="multipart/form-data">
 			<table id="edit">
 
 				<div class="mb-3">
 					<label for="upload-name">포스터</label><span class="text-muted">(Optional)</span></label>
 					<div class="filebox">
-						<input class="form-control mb-2 upload-name" id="upload-name" name="poster" value="첨부파일" placeholder="첨부파일" readonly>
+						<input class="form-control mb-2 upload-name" id="upload-name" name="poster" value="${movieVO.getPoster()}" readonly>
 						<label class="btn btn-outline-primary btn-sm btn-block" for="poster">포스터 업로드</label>
-						<input type="file" name="poster" id="poster" value="${movieVO.getPoster()}">
+						<input type="file" name="poster" id="poster">
 					</div>
 				</div>
 
