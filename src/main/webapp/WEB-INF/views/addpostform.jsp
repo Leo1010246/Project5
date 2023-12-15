@@ -100,8 +100,8 @@
         </ul>
     </footer>
     <script>
-        document.getElementById('input-file').addEventListener('change', function() {
-            var fullPath = document.getElementById('input-file').value;
+        document.getElementById('poster').addEventListener('change', function() {
+            var fullPath = document.getElementById('poster').value;
             if (fullPath) {
                 var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
                 var filename = fullPath.substring(startIndex);
@@ -112,5 +112,6 @@
             }
         });
     </script>
+
 </body>
 </html>
