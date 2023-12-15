@@ -36,7 +36,9 @@
 
 <h1>Edit Form</h1>
 
-<form:form modelAttribute="movieVO" method="POST" action="../editok">
+<form:form modelAttribute="movieVO"
+		   method="POST"
+		   action="../editok/${seq}">
 	<form:hidden path="seq"/>
 	<table id="edit">
 		<tr><td>Poster:</td><td><form:input path="poster" /></td></tr>

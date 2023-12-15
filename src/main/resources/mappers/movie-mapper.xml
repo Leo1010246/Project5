@@ -11,7 +11,7 @@
     <update id="updateMovie">
         update Movie
         set poster=#{poster}, title=#{title}, reldate=#{reldate}, genre=#{genre}, director=#{director}, actors=#{actors}, story=#{story}, rating=#{rating}
-        where seq=#{seq}
+        where sid=#{sid}
     </update>
     <delete id="deleteMovie">
         delete from Movie where seq=#{seq}
@@ -21,5 +21,8 @@
     </select>
     <select id="getMovieList" resultType="movie">
         select * from Movie order by seq desc
+    </select>
+    <select id="getPoster" resultType="String">
+        select poster from Movie where seq=#{seq}
     </select>
 </mapper>

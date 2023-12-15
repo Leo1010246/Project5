@@ -24,23 +24,21 @@
 
 </head>
 <body>
-
-<header>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <img src="../img/logo.svg" width="40" height="40" class="me-2">
-                <strong>영화게시판</strong>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-primary me-md-2" onclick="location.href='add'">영화추가</a>
-                    <span></span>
-                    <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
-                </div>
-            </a>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="../img/logo.svg" width="40" height="40" class="me-2">
+                    <strong>영화게시판</strong>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a class="btn btn-primary me-md-2" onclick="location.href='add'">영화추가</a>
+                        <span></span>
+                        <a class="btn btn-outline-primary" onclick="location.href='../login/logout'">로그아웃</a>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-</header>
-
+    </header>
 <main role="main">
     <div class="album py-5 bg-light">
         <div class="container">
@@ -128,6 +126,5 @@
 <%--</table>--%>
 <%--<br/><button type="button" onclick="location.href='add'">영화추가</button>--%>
 <%--<br/><button type="button" onclick="location.href='../login/logout'">로그아웃</button>--%>
-
 </body>
 </html>
