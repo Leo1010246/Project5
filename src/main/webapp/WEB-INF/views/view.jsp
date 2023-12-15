@@ -28,10 +28,10 @@
                 <nav>
                     <h3 style="color:white"><a onclick="history.back()">영화 상세</a></h3>
                 </nav>
-                <nav class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-outline-primary" onclick="history.back()">돌아가기</a>
-                    <a class="btn btn-outline-primary" onclick="location.href='../../login/logout'">로그아웃</a>
-                </nav>
+<%--                <nav class="d-grid gap-2 d-md-flex justify-content-md-end">--%>
+<%--                    <a class="btn btn-outline-primary" onclick="history.back()">돌아가기</a>--%>
+<%--                    <a class="btn btn-outline-primary" onclick="location.href='../../login/logout'">로그아웃</a>--%>
+<%--                </nav>--%>
             </div>
         </div>
     </header>
@@ -44,7 +44,7 @@
                 <div class="row mb-4 shadow-sm">
 
                     <div class="imgBox">
-                        <img src="../../upload/${u.poster}" width="600" height="700" class="me-2"/>
+                        <img src="../../upload/${u.poster}" width="420" height="594" class="me-2"/>
                     </div>
                     <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
                     <div class="textBox">

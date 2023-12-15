@@ -29,7 +29,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 800px; /* 원하는 크기로 조정하세요 */
+            width: 1500px; /* 원하는 크기로 조정하세요 */
             height: 600px; /* 원하는 크기로 조정하세요 */
             background-color: #fff;
             border: 1px solid #ccc;
@@ -97,7 +97,7 @@
         // 팝업 열기
         function openPopup(url) {
             // 팝업 창 열기
-            var popup = window.open(url, 'Popup', `width=800,height=600,left=400,top=200`);
+            var popup = window.open(url, 'Popup', `width=1050,height=600,left=350,top=180`);
 
             // 팝업 컨테이너에 내용이 비어있는 경우 팝업 창을 이동
             if (document.getElementById('popup-container').innerHTML.trim() === '') {
