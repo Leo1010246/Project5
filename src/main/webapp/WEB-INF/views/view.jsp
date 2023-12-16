@@ -73,7 +73,7 @@
                             <div class="btn-group">
 <%--                                <br/><button type="button" onclick="location.href='add'">영화추가</button>--%>
                                 <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='../editform/${u.seq}'">영화편집</button>
-                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='javascript:../delete_ok(\'${u.seq}\')'">영화삭제</button>
+<%--                                <br/><button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='javascript:../delete_ok(\'${u.seq}\')'">영화삭제</button>--%>
                             </div>
                         </div>
                     </div>
