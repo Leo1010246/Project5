@@ -47,12 +47,14 @@ public class MovieController {
 
     @RequestMapping(value = "/editok/{seq}", method = RequestMethod.POST)
     public String editPostOk(@PathVariable("seq") int seq, HttpServletRequest request) {
-        if (movieService.updateMovie(request, seq) == 0) {
-            System.out.println("데이터 수정 실패 failed to update data");
+        int i = movieService.updateMovie(request, seq);
+        System.out.println(i);
+        if (i == 0) {
+            System.out.println("데이터 수정 실패");
         } else {
             System.out.println("데이터 수정 성공!!!");
         }
-        return "redirect:list";
+        return "redirect:../list";
     }
 
     @RequestMapping(value = "/deleteok/{seq}", method = RequestMethod.GET)

@@ -27,7 +27,7 @@ public class FileUpload {
             filename = multipartRequest.getFilesystemName("poster");
             one = new MovieVO();
             String seq = multipartRequest.getParameter("seq");
-            if (seq != null && !seq.equals("") && isNumeric(seq))
+            if (seq != null && !seq.equals(""))
                 one.setSeq(Integer.parseInt(seq));
             one.setTitle(multipartRequest.getParameter("title"));
             one.setGenre(multipartRequest.getParameter("genre"));

@@ -27,6 +27,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public int updateMovie(HttpServletRequest request, int seq) {
         MovieVO vo = FileUpload.UploadImg(request, movieDAO.getPoster(seq));
+        System.out.println(movieDAO.updateMovie(vo));
         return movieDAO.updateMovie(vo);
     }
 

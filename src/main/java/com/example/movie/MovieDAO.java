@@ -30,7 +30,6 @@ public class MovieDAO {
         return result;
     }
 
-
     public int updateMovie(MovieVO vo) {
         int result = sqlSession.update("Movie.updateMovie", vo);
         return result;
