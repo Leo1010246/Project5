@@ -33,7 +33,7 @@
 	<div class="col-md-auto">
 		<h4 class="mb-3">영화 정보 입력</h4>
 		<form action="../editok/${movieVO.getSeq()}" method="post" enctype="multipart/form-data">
-			<table id="edit">
+		<table id="edit">
 
 				<div class="mb-3">
 					<label for="upload-name">포스터</label><span class="text-muted">(Optional)</span></label>
@@ -101,16 +101,9 @@
 </footer>
 
 <script>
-	document.getElementById('input-file').addEventListener('change', function() {
-		var fullPath = document.getElementById('input-file').value;
-		if (fullPath) {
-			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-			var filename = fullPath.substring(startIndex);
-			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-				filename = filename.substring(1);
-			}
-			document.getElementById('upload-name').value = filename;
-		}
+	document.getElementById('poster').addEventListener('change', function() {
+		var fileName = this.files[0].name;
+		document.getElementById('upload-name').value = fileName;
 	});
 </script>
 
