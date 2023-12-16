@@ -27,7 +27,7 @@ public class MovieController {
         return "addpostform";
     }
 
-    @RequestMapping(value = "addok", method = RequestMethod.POST)
+    @RequestMapping(value = "/addok", method = RequestMethod.POST)
     public String addPostOk(HttpServletRequest request) {
 
         if (movieService.insertMovie(request) == 0) {
@@ -48,7 +48,7 @@ public class MovieController {
     @RequestMapping(value = "/editok/{seq}", method = RequestMethod.POST)
     public String editPostOk(@PathVariable("seq") int seq, HttpServletRequest request) {
         if (movieService.updateMovie(request, seq) == 0) {
-            System.out.println("데이터 수정 실패");
+            System.out.println("데이터 수정 실패 failed to update data");
         } else {
             System.out.println("데이터 수정 성공!!!");
         }
