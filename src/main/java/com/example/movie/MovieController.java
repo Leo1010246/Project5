@@ -29,7 +29,6 @@ public class MovieController {
 
     @RequestMapping(value = "/addok", method = RequestMethod.POST)
     public String addPostOk(HttpServletRequest request) {
-
         if (movieService.insertMovie(request) == 0) {
             System.out.println("데이터 추가 실패");
         } else {

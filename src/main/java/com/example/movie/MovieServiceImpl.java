@@ -24,24 +24,13 @@ public class MovieServiceImpl implements MovieService {
         return movieDAO.deleteMovie(seq);
     }
 
-//    @Override
-//    public int updateMovie(HttpServletRequest request, int seq) {
-//        return 0;
-//    }
-
     @Override
     public int updateMovie(HttpServletRequest request, int seq) {
         MovieVO vo = FileUpload.UploadImg(request, movieDAO.getPoster(seq));
-        System.out.println(movieDAO.updateMovie(vo));
+        vo.setSeq(seq);
+        vo.setPoster(movieDAO.getPoster(seq));
         return movieDAO.updateMovie(vo);
     }
-
-//    @Override
-//    public int updateMovie(MovieVO vo) {
-//        //MovieVO vo = FileUpload.UploadImg(request, movieDAO.getPoster(seq));
-//        return movieDAO.updateMovie(vo);
-//    }
-
 
     @Override
     public MovieVO getMovie(int seq) {

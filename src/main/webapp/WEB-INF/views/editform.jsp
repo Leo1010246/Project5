@@ -32,7 +32,7 @@
 <div class="row justify-content-md-center">
 	<div class="col-md-auto">
 		<h4 class="mb-3">영화 정보 입력</h4>
-		<form action="../editok/${movieVO.getSeq()}" method="post" enctype="multipart/form-data">
+		<form action="../editok/${seq}" method="post" enctype="multipart/form-data">
 		<table id="edit">
 
 				<div class="mb-3">
@@ -78,7 +78,7 @@
 
 				<label for="rating">평점 선택</label>
 					<select id="rating" class="form-control" name="rating" required>
-						<option value="${movieVO.getRating()}" selected disabled >${movieVO.getRating()}점</option>
+						<option value="${rating}" selected disabled >${movieVO.getRating()}점</option>
 						<option value="1" >1점</option>
 						<option value="2" >2점</option>
 						<option value="3" >3점</option>
