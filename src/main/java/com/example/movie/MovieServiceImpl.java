@@ -28,7 +28,7 @@ public class MovieServiceImpl implements MovieService {
     public int updateMovie(HttpServletRequest request, int seq) {
         MovieVO vo = FileUpload.UploadImg(request, movieDAO.getPoster(seq));
         vo.setSeq(seq);
-        vo.setPoster(movieDAO.getPoster(seq));
+        vo.setPoster(vo.getPoster());
         return movieDAO.updateMovie(vo);
     }
 
