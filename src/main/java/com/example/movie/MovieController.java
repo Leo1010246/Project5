@@ -35,7 +35,7 @@ public class MovieController {
         } else {
             System.out.println("데이터 추가 성공!!!");
         }
-        return "redirect:list";
+        return "redirect../list";
     }
 
     @RequestMapping(value = "/editform/{seq}", method = RequestMethod.GET)
