@@ -27,17 +27,17 @@ public class FileUpload {
             filename = multipartRequest.getFilesystemName("poster");
             one = new MovieVO();
             String seq = multipartRequest.getParameter("seq");
-            if (seq != null && !seq.equals(""))
+            if (seq != null && !seq.equals("") && isNumeric(seq))
                 one.setSeq(Integer.parseInt(seq));
             one.setTitle(multipartRequest.getParameter("title"));
-            System.out.print("title:");
-            System.out.println(multipartRequest.getParameter("title"));
             one.setGenre(multipartRequest.getParameter("genre"));
             one.setReldate(multipartRequest.getParameter("reldate"));
             one.setDirector(multipartRequest.getParameter("director"));
             one.setActors(multipartRequest.getParameter("actors"));
             one.setStory(multipartRequest.getParameter("story"));
-            one.setRating(Integer.parseInt(multipartRequest.getParameter("rating")));
+            String rating = multipartRequest.getParameter("rating");
+            if (rating != null && !rating.equals("") && isNumeric(rating))
+                one.setRating(Integer.parseInt(rating));
 
             if (seq != null && !seq.equals("")) {
                 if(filename != null && oldfilename != null)
@@ -57,5 +57,14 @@ public class FileUpload {
 
         File f = new File(filePath + "/" + filename);
         if (f.exists()) f.delete();
+    }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
     }
 }

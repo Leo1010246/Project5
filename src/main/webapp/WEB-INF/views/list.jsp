@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <small class="text-muted">작성일: ${u.regdate}</small>
+                                <small class="text-muted">최초 작성일: ${u.regdate}</small>
                             </div>
                         </div>
                         <div id="popup-container"></div>

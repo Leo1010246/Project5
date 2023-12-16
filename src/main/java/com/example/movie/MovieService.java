@@ -8,7 +8,7 @@ import java.util.List;
 public interface MovieService {
     public int insertMovie(HttpServletRequest request);
     public int deleteMovie(int seq);
-    int updateMovie(HttpServletRequest request, int seq);
+    public int updateMovie(HttpServletRequest request, int seq);
 
     public MovieVO getMovie(int seq);
     public List<MovieVO> getMovieList();
